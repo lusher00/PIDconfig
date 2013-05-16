@@ -822,7 +822,7 @@ namespace PID_Config
         }
         private void Z_send_Click(object sender, EventArgs e)
         {
-            String output = "ANG;" + (zero_ang * 100.0).ToString() + "\r";
+            String output = "ANG;" + (zero_ang * 1.0).ToString() + "\r";
             if (port.IsOpen == true)
                 port.WriteLine(output);
             SetOutputText(output);
@@ -830,7 +830,7 @@ namespace PID_Config
         }
         private void ALL_send_Click(object sender, EventArgs e)
         {
-            String output = "PID;" + (pGain * 100).ToString() + ";" + (iGain * 100).ToString() + ";" + (dGain * 100).ToString() + "\r";
+            String output = "PID;" + (pGain * 1).ToString() + ";" + (iGain * 1).ToString() + ";" + (dGain * 1).ToString() + "\r";
             if (port.IsOpen == true)
                 port.WriteLine(output);
             SetOutputText(output);
@@ -851,7 +851,7 @@ namespace PID_Config
             SetPText(pGain.ToString());
             if (p_send_checkBox.Checked)
             {
-                String output = "P;" + (pGain * 100).ToString() + "\r";
+                String output = "P;" + (pGain * 1).ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -864,7 +864,7 @@ namespace PID_Config
             SetPText(pGain.ToString());
             if (p_send_checkBox.Checked)
             {
-                String output = "P;" + (pGain * 100).ToString() + "\r";
+                String output = "P;" + (pGain * 1).ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -877,7 +877,7 @@ namespace PID_Config
             SetIText(iGain.ToString());
             if (i_send_checkBox.Checked)
             {
-                String output = "I;" + (iGain * 100).ToString() + "\r";
+                String output = "I;" + (iGain * 1).ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -890,7 +890,7 @@ namespace PID_Config
             SetIText(iGain.ToString());
             if (i_send_checkBox.Checked)
             {
-                String output = "I;" + (iGain * 100).ToString() + "\r";
+                String output = "I;" + (iGain * 1).ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -903,7 +903,7 @@ namespace PID_Config
             SetDText(dGain.ToString());
             if (d_send_checkBox.Checked)
             {
-                String output = "D;" + (dGain * 100).ToString() + "\r";
+                String output = "D;" + (dGain * 1).ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -916,7 +916,7 @@ namespace PID_Config
             SetDText(dGain.ToString());
             if (d_send_checkBox.Checked)
             {
-                String output = "D;" + (dGain * 100).ToString() + "\r";
+                String output = "D;" + (dGain * 1).ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -929,7 +929,7 @@ namespace PID_Config
             SetZText(zero_ang.ToString());
             if (z_send_checkBox.Checked)
             {
-                String output = "ANG;" + (zero_ang * 1000.0).ToString() + "\r";
+                String output = "ANG;" + (zero_ang * 1.0).ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -942,7 +942,7 @@ namespace PID_Config
             SetZText(zero_ang.ToString());
             if (z_send_checkBox.Checked)
             {
-                String output = "ANG;" + (zero_ang * 1000.0).ToString() + "\r";
+                String output = "ANG;" + (zero_ang * 1.0).ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
