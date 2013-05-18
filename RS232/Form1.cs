@@ -795,34 +795,39 @@ namespace PID_Config
             else this.mult4_textBox.Text = text;
         }
         #endregion
+        
         #region[Buttons]
+        
         private void P_send_Click(object sender, EventArgs e)
         {
-            String output = "P;" + (pGain * 1).ToString() + "\r";
+            String output = "P!;" + pGain.ToString() + "\r";
             if(port.IsOpen == true)
                 port.WriteLine(output);
             SetOutputText(output);
             
         }
+        
         private void I_send_Click(object sender, EventArgs e)
         {
-            String output = "I;" + (iGain * 1).ToString() + "\r";
+            String output = "I!;" + iGain.ToString() + "\r";
             if (port.IsOpen == true)
                 port.WriteLine(output);
             SetOutputText(output);
             
         }
+        
         private void D_send_Click(object sender, EventArgs e)
         {
-            String output = "D;" + (dGain * 1).ToString() + "\r";
+            String output = "D!;" + dGain.ToString() + "\r";
             if (port.IsOpen == true)
                 port.WriteLine(output);
             SetOutputText(output);
             
         }
+        
         private void Z_send_Click(object sender, EventArgs e)
         {
-            String output = "ANG;" + (zero_ang * 1.0).ToString() + "\r";
+            String output = "ANG!;" + zero_ang.ToString() + "\r";
             if (port.IsOpen == true)
                 port.WriteLine(output);
             SetOutputText(output);
@@ -830,7 +835,7 @@ namespace PID_Config
         }
         private void ALL_send_Click(object sender, EventArgs e)
         {
-            String output = "PID;" + (pGain * 1).ToString() + ";" + (iGain * 1).ToString() + ";" + (dGain * 1).ToString() + "\r";
+            String output = "PID!;" + pGain.ToString() + ";" + iGain.ToString() + ";" + dGain.ToString() + "\r";
             if (port.IsOpen == true)
                 port.WriteLine(output);
             SetOutputText(output);
@@ -851,7 +856,7 @@ namespace PID_Config
             SetPText(pGain.ToString());
             if (p_send_checkBox.Checked)
             {
-                String output = "P;" + (pGain * 1).ToString() + "\r";
+                String output = "P;" + pGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -864,7 +869,7 @@ namespace PID_Config
             SetPText(pGain.ToString());
             if (p_send_checkBox.Checked)
             {
-                String output = "P;" + (pGain * 1).ToString() + "\r";
+                String output = "P;" + pGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -877,7 +882,7 @@ namespace PID_Config
             SetIText(iGain.ToString());
             if (i_send_checkBox.Checked)
             {
-                String output = "I;" + (iGain * 1).ToString() + "\r";
+                String output = "I;" + iGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -890,7 +895,7 @@ namespace PID_Config
             SetIText(iGain.ToString());
             if (i_send_checkBox.Checked)
             {
-                String output = "I;" + (iGain * 1).ToString() + "\r";
+                String output = "I;" + iGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -903,7 +908,7 @@ namespace PID_Config
             SetDText(dGain.ToString());
             if (d_send_checkBox.Checked)
             {
-                String output = "D;" + (dGain * 1).ToString() + "\r";
+                String output = "D;" + dGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -916,7 +921,7 @@ namespace PID_Config
             SetDText(dGain.ToString());
             if (d_send_checkBox.Checked)
             {
-                String output = "D;" + (dGain * 1).ToString() + "\r";
+                String output = "D;" + dGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -929,7 +934,7 @@ namespace PID_Config
             SetZText(zero_ang.ToString());
             if (z_send_checkBox.Checked)
             {
-                String output = "ANG;" + (zero_ang * 1.0).ToString() + "\r";
+                String output = "ANG;" + zero_ang.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -972,7 +977,7 @@ namespace PID_Config
             SetLeftMotText(leftMotGain.ToString());
             if (left_mot_send_checkbox.Checked)
             {
-                String output = "MOTL;" + (leftMotGain).ToString() + "\r";
+                String output = "MOTL;" + leftMotGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -986,7 +991,7 @@ namespace PID_Config
             SetLeftMotText(leftMotGain.ToString());
             if (left_mot_send_checkbox.Checked)
             {
-                String output = "MOTL;" + (leftMotGain).ToString() + "\r";
+                String output = "MOTL;" + leftMotGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
@@ -999,7 +1004,7 @@ namespace PID_Config
             SetRightMotText(rightMotGain.ToString());
             if (right_mot_send_checkbox.Checked)
             {
-                String output = "MOTR;" + (rightMotGain).ToString() + "\r";
+                String output = "MOTR;" + rightMotGain.ToString() + "\r";
                 if (port.IsOpen == true)
                     port.WriteLine(output);
                 SetOutputText(output);
