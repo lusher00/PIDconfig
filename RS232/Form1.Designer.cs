@@ -656,6 +656,7 @@ namespace PID_Config
             this.Z_text_box.Name = "Z_text_box";
             this.Z_text_box.Size = new System.Drawing.Size(63, 23);
             this.Z_text_box.TabIndex = 68;
+            this.Z_text_box.TextChanged += new System.EventHandler(this.Z_text_box_TextChanged);
             // 
             // z_plus
             // 
