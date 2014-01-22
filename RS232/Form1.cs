@@ -444,7 +444,10 @@ namespace PID_Config
                 port.Close();
             
             port.PortName = cmbComSelect.SelectedItem.ToString();
-            
+
+            if (port.PortName.Contains("w"))
+                port.PortName = port.PortName.Replace("w", null);
+
             // try to open the selected port:
             try
             {
