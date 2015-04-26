@@ -39,6 +39,7 @@ namespace PID_Config
         
         double pTerm = 0, iTerm = 0, dTerm = 0;
         double pGain = 0, iGain = 0, dGain = 0;
+        double comp_c = 0;
 
         double leftMotGain=1.0, rightMotGain=1.0;
         double leftRPM = 0, rightRPM = 0;
@@ -132,6 +133,9 @@ namespace PID_Config
             right_mot_text_box.Text = "1.0";
             mot_R_increase_textBox.Text = "0.01";
             right_mot_send_checkbox.Checked = true;
+
+            compc_increase_textBox.Text = "0.005";
+            compc_checkBox.Checked = true;
         }
         
         int loopCnt, loop_cnt;
@@ -204,6 +208,8 @@ namespace PID_Config
                             catch { }
                             try { zero_ang = Convert.ToDouble(ParsedData[5]); }
                             catch { }
+                            try { comp_c = Convert.ToDouble(ParsedData[6]); }
+                            catch { }
 
                             loopCnt = 0;
 
@@ -211,6 +217,7 @@ namespace PID_Config
                             SetIText(iGain.ToString());
                             SetDText(dGain.ToString());
                             SetZText(zero_ang.ToString());
+                            SetCompcText(comp_c.ToString());
                             
                             break;
 
@@ -748,7 +755,20 @@ namespace PID_Config
             }
             else this.right_mot_text_box.Text = text;
         }
-        
+
+        private void SetCompcText(string text)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            if (this.compc_text_box.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(SetCompcText);
+                this.Invoke(d, new object[] { text });
+            }
+            else this.compc_text_box.Text = text;
+        }
+
         private void SetMult1Text(string text)
         {
             // InvokeRequired required compares the thread ID of the
@@ -798,7 +818,6 @@ namespace PID_Config
             else this.mult4_textBox.Text = text;
         }
         #endregion
-        
         #region[Buttons]
         
         private void P_send_Click(object sender, EventArgs e)
@@ -957,6 +976,42 @@ namespace PID_Config
             }
         }
 
+        private void compc_plus_Click(object sender, EventArgs e)
+        {
+            try { comp_c += Convert.ToDouble(compc_increase_textBox.Text); }
+            catch { }
+            SetCompcText(comp_c.ToString());
+            if (compc_checkBox.Checked)
+            {
+                String output = "COMPC;" + comp_c.ToString() + "\r";
+                if (port.IsOpen == true)
+                    port.WriteLine(output);
+                SetOutputText(output);
+            }
+
+        }
+        private void compc_minus_Click(object sender, EventArgs e)
+        {
+            try { comp_c -= Convert.ToDouble(compc_increase_textBox.Text); }
+            catch { }
+            SetCompcText(comp_c.ToString());
+            if (compc_checkBox.Checked)
+            {
+                String output = "COMPC;" + comp_c.ToString() + "\r";
+                if (port.IsOpen == true)
+                    port.WriteLine(output);
+                SetOutputText(output);
+            }
+
+        }
+        private void compc_send_Click(object sender, EventArgs e)
+        {
+            String output = "COMPC!;" + comp_c.ToString() + "\r";
+            if (port.IsOpen == true)
+                port.WriteLine(output);
+            SetOutputText(output);
+        }
+
         private void left_pos_plus_Click(object sender, EventArgs e)
         {
 
@@ -1067,6 +1122,11 @@ namespace PID_Config
             try { zero_ang = Convert.ToDouble(Z_text_box.Text); }
             catch { Z_text_box.Clear(); }
         }
+        private void compc_text_box_TextChanged(object sender, EventArgs e)
+        {
+            try { comp_c = Convert.ToDouble(compc_text_box.Text); }
+            catch { compc_text_box.Clear(); }
+        }
 
         private void logging_CheckStateChanged(object sender, EventArgs e)
         {
@@ -1083,8 +1143,9 @@ namespace PID_Config
             }
         }
 
-   
-            
+
+
+           
 
 
     }

@@ -118,6 +118,13 @@ namespace PID_Config
             this.left_mot_send_checkbox = new System.Windows.Forms.CheckBox();
             this.right_pos_send_checkbox = new System.Windows.Forms.CheckBox();
             this.left_pos_send_checkbox = new System.Windows.Forms.CheckBox();
+            this.compc_text_box = new System.Windows.Forms.TextBox();
+            this.compc_plus = new System.Windows.Forms.Button();
+            this.compc_minus = new System.Windows.Forms.Button();
+            this.compc_increase_textBox = new System.Windows.Forms.TextBox();
+            this.compc_checkBox = new System.Windows.Forms.CheckBox();
+            this.compc_send = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pitch_trackBar)).BeginInit();
             this.SuspendLayout();
@@ -136,10 +143,10 @@ namespace PID_Config
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stsStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 503);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 502);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1006, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1043, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -152,7 +159,7 @@ namespace PID_Config
             // txtOut
             // 
             this.txtOut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtOut.Location = new System.Drawing.Point(495, 442);
+            this.txtOut.Location = new System.Drawing.Point(516, 442);
             this.txtOut.Margin = new System.Windows.Forms.Padding(4);
             this.txtOut.Name = "txtOut";
             this.txtOut.Size = new System.Drawing.Size(432, 23);
@@ -262,7 +269,7 @@ namespace PID_Config
             // P_send
             // 
             this.P_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.P_send.Location = new System.Drawing.Point(695, 320);
+            this.P_send.Location = new System.Drawing.Point(716, 320);
             this.P_send.Margin = new System.Windows.Forms.Padding(4);
             this.P_send.Name = "P_send";
             this.P_send.Size = new System.Drawing.Size(45, 23);
@@ -274,7 +281,7 @@ namespace PID_Config
             // I_send
             // 
             this.I_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.I_send.Location = new System.Drawing.Point(695, 351);
+            this.I_send.Location = new System.Drawing.Point(716, 351);
             this.I_send.Margin = new System.Windows.Forms.Padding(4);
             this.I_send.Name = "I_send";
             this.I_send.Size = new System.Drawing.Size(45, 23);
@@ -286,7 +293,7 @@ namespace PID_Config
             // D_send
             // 
             this.D_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.D_send.Location = new System.Drawing.Point(695, 382);
+            this.D_send.Location = new System.Drawing.Point(716, 382);
             this.D_send.Margin = new System.Windows.Forms.Padding(4);
             this.D_send.Name = "D_send";
             this.D_send.Size = new System.Drawing.Size(45, 23);
@@ -299,7 +306,7 @@ namespace PID_Config
             // 
             this.ALL_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ALL_send.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ALL_send.Location = new System.Drawing.Point(749, 320);
+            this.ALL_send.Location = new System.Drawing.Point(770, 320);
             this.ALL_send.Margin = new System.Windows.Forms.Padding(4);
             this.ALL_send.Name = "ALL_send";
             this.ALL_send.Size = new System.Drawing.Size(59, 85);
@@ -446,7 +453,7 @@ namespace PID_Config
             // btnSend
             // 
             this.btnSend.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSend.Location = new System.Drawing.Point(852, 442);
+            this.btnSend.Location = new System.Drawing.Point(873, 442);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 43;
@@ -462,7 +469,7 @@ namespace PID_Config
             // pTerm_text_box
             // 
             this.pTerm_text_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pTerm_text_box.Location = new System.Drawing.Point(883, 320);
+            this.pTerm_text_box.Location = new System.Drawing.Point(904, 320);
             this.pTerm_text_box.Margin = new System.Windows.Forms.Padding(4);
             this.pTerm_text_box.Name = "pTerm_text_box";
             this.pTerm_text_box.Size = new System.Drawing.Size(111, 23);
@@ -471,7 +478,7 @@ namespace PID_Config
             // iTerm_text_box
             // 
             this.iTerm_text_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.iTerm_text_box.Location = new System.Drawing.Point(883, 351);
+            this.iTerm_text_box.Location = new System.Drawing.Point(904, 351);
             this.iTerm_text_box.Margin = new System.Windows.Forms.Padding(4);
             this.iTerm_text_box.Name = "iTerm_text_box";
             this.iTerm_text_box.Size = new System.Drawing.Size(111, 23);
@@ -480,7 +487,7 @@ namespace PID_Config
             // dTerm_text_box
             // 
             this.dTerm_text_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dTerm_text_box.Location = new System.Drawing.Point(883, 382);
+            this.dTerm_text_box.Location = new System.Drawing.Point(904, 382);
             this.dTerm_text_box.Margin = new System.Windows.Forms.Padding(4);
             this.dTerm_text_box.Name = "dTerm_text_box";
             this.dTerm_text_box.Size = new System.Drawing.Size(111, 23);
@@ -489,7 +496,7 @@ namespace PID_Config
             // m_text_box
             // 
             this.m_text_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.m_text_box.Location = new System.Drawing.Point(883, 412);
+            this.m_text_box.Location = new System.Drawing.Point(904, 412);
             this.m_text_box.Margin = new System.Windows.Forms.Padding(4);
             this.m_text_box.Name = "m_text_box";
             this.m_text_box.Size = new System.Drawing.Size(111, 23);
@@ -500,7 +507,7 @@ namespace PID_Config
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(804, 415);
+            this.label10.Location = new System.Drawing.Point(825, 415);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 17);
@@ -541,7 +548,7 @@ namespace PID_Config
             this.d_increase_textBox.Location = new System.Drawing.Point(634, 382);
             this.d_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.d_increase_textBox.Name = "d_increase_textBox";
-            this.d_increase_textBox.Size = new System.Drawing.Size(32, 23);
+            this.d_increase_textBox.Size = new System.Drawing.Size(53, 23);
             this.d_increase_textBox.TabIndex = 58;
             // 
             // i_increase_textBox
@@ -550,7 +557,7 @@ namespace PID_Config
             this.i_increase_textBox.Location = new System.Drawing.Point(634, 351);
             this.i_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.i_increase_textBox.Name = "i_increase_textBox";
-            this.i_increase_textBox.Size = new System.Drawing.Size(32, 23);
+            this.i_increase_textBox.Size = new System.Drawing.Size(53, 23);
             this.i_increase_textBox.TabIndex = 57;
             // 
             // p_increase_textBox
@@ -559,14 +566,14 @@ namespace PID_Config
             this.p_increase_textBox.Location = new System.Drawing.Point(634, 320);
             this.p_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.p_increase_textBox.Name = "p_increase_textBox";
-            this.p_increase_textBox.Size = new System.Drawing.Size(32, 23);
+            this.p_increase_textBox.Size = new System.Drawing.Size(53, 23);
             this.p_increase_textBox.TabIndex = 56;
             // 
             // p_send_checkBox
             // 
             this.p_send_checkBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.p_send_checkBox.AutoSize = true;
-            this.p_send_checkBox.Location = new System.Drawing.Point(673, 325);
+            this.p_send_checkBox.Location = new System.Drawing.Point(694, 325);
             this.p_send_checkBox.Name = "p_send_checkBox";
             this.p_send_checkBox.Size = new System.Drawing.Size(15, 14);
             this.p_send_checkBox.TabIndex = 59;
@@ -576,7 +583,7 @@ namespace PID_Config
             // 
             this.i_send_checkBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.i_send_checkBox.AutoSize = true;
-            this.i_send_checkBox.Location = new System.Drawing.Point(673, 356);
+            this.i_send_checkBox.Location = new System.Drawing.Point(694, 356);
             this.i_send_checkBox.Name = "i_send_checkBox";
             this.i_send_checkBox.Size = new System.Drawing.Size(15, 14);
             this.i_send_checkBox.TabIndex = 60;
@@ -586,7 +593,7 @@ namespace PID_Config
             // 
             this.d_send_checkBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.d_send_checkBox.AutoSize = true;
-            this.d_send_checkBox.Location = new System.Drawing.Point(673, 387);
+            this.d_send_checkBox.Location = new System.Drawing.Point(694, 387);
             this.d_send_checkBox.Name = "d_send_checkBox";
             this.d_send_checkBox.Size = new System.Drawing.Size(15, 14);
             this.d_send_checkBox.TabIndex = 61;
@@ -688,14 +695,14 @@ namespace PID_Config
             this.z_increase_textBox.Location = new System.Drawing.Point(634, 413);
             this.z_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.z_increase_textBox.Name = "z_increase_textBox";
-            this.z_increase_textBox.Size = new System.Drawing.Size(32, 23);
+            this.z_increase_textBox.Size = new System.Drawing.Size(53, 23);
             this.z_increase_textBox.TabIndex = 71;
             // 
             // z_send_checkBox
             // 
             this.z_send_checkBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.z_send_checkBox.AutoSize = true;
-            this.z_send_checkBox.Location = new System.Drawing.Point(673, 418);
+            this.z_send_checkBox.Location = new System.Drawing.Point(694, 418);
             this.z_send_checkBox.Name = "z_send_checkBox";
             this.z_send_checkBox.Size = new System.Drawing.Size(15, 14);
             this.z_send_checkBox.TabIndex = 72;
@@ -704,7 +711,7 @@ namespace PID_Config
             // Z_send
             // 
             this.Z_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Z_send.Location = new System.Drawing.Point(695, 412);
+            this.Z_send.Location = new System.Drawing.Point(716, 412);
             this.Z_send.Margin = new System.Windows.Forms.Padding(4);
             this.Z_send.Name = "Z_send";
             this.Z_send.Size = new System.Drawing.Size(45, 23);
@@ -729,7 +736,7 @@ namespace PID_Config
             // 
             this.ZERO_ALL_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ZERO_ALL_send.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ZERO_ALL_send.Location = new System.Drawing.Point(816, 320);
+            this.ZERO_ALL_send.Location = new System.Drawing.Point(837, 320);
             this.ZERO_ALL_send.Margin = new System.Windows.Forms.Padding(4);
             this.ZERO_ALL_send.Name = "ZERO_ALL_send";
             this.ZERO_ALL_send.Size = new System.Drawing.Size(59, 85);
@@ -753,7 +760,7 @@ namespace PID_Config
             // velocity_right_textBox
             // 
             this.velocity_right_textBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.velocity_right_textBox.Location = new System.Drawing.Point(671, 139);
+            this.velocity_right_textBox.Location = new System.Drawing.Point(692, 139);
             this.velocity_right_textBox.Name = "velocity_right_textBox";
             this.velocity_right_textBox.Size = new System.Drawing.Size(74, 23);
             this.velocity_right_textBox.TabIndex = 78;
@@ -889,7 +896,7 @@ namespace PID_Config
             // left_mot_send
             // 
             this.left_mot_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.left_mot_send.Location = new System.Drawing.Point(695, 229);
+            this.left_mot_send.Location = new System.Drawing.Point(716, 229);
             this.left_mot_send.Margin = new System.Windows.Forms.Padding(4);
             this.left_mot_send.Name = "left_mot_send";
             this.left_mot_send.Size = new System.Drawing.Size(45, 23);
@@ -901,7 +908,7 @@ namespace PID_Config
             // right_mot_send
             // 
             this.right_mot_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.right_mot_send.Location = new System.Drawing.Point(695, 259);
+            this.right_mot_send.Location = new System.Drawing.Point(716, 259);
             this.right_mot_send.Margin = new System.Windows.Forms.Padding(4);
             this.right_mot_send.Name = "right_mot_send";
             this.right_mot_send.Size = new System.Drawing.Size(45, 23);
@@ -916,7 +923,7 @@ namespace PID_Config
             this.mot_L_increase_textBox.Location = new System.Drawing.Point(634, 229);
             this.mot_L_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.mot_L_increase_textBox.Name = "mot_L_increase_textBox";
-            this.mot_L_increase_textBox.Size = new System.Drawing.Size(32, 23);
+            this.mot_L_increase_textBox.Size = new System.Drawing.Size(53, 23);
             this.mot_L_increase_textBox.TabIndex = 93;
             // 
             // mot_R_increase_textBox
@@ -925,7 +932,7 @@ namespace PID_Config
             this.mot_R_increase_textBox.Location = new System.Drawing.Point(634, 259);
             this.mot_R_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.mot_R_increase_textBox.Name = "mot_R_increase_textBox";
-            this.mot_R_increase_textBox.Size = new System.Drawing.Size(32, 23);
+            this.mot_R_increase_textBox.Size = new System.Drawing.Size(53, 23);
             this.mot_R_increase_textBox.TabIndex = 94;
             // 
             // pos_R_increase_textBox
@@ -934,7 +941,7 @@ namespace PID_Config
             this.pos_R_increase_textBox.Location = new System.Drawing.Point(634, 199);
             this.pos_R_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.pos_R_increase_textBox.Name = "pos_R_increase_textBox";
-            this.pos_R_increase_textBox.Size = new System.Drawing.Size(32, 23);
+            this.pos_R_increase_textBox.Size = new System.Drawing.Size(53, 23);
             this.pos_R_increase_textBox.TabIndex = 102;
             // 
             // pos_L_increase_textBox
@@ -943,13 +950,13 @@ namespace PID_Config
             this.pos_L_increase_textBox.Location = new System.Drawing.Point(634, 169);
             this.pos_L_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.pos_L_increase_textBox.Name = "pos_L_increase_textBox";
-            this.pos_L_increase_textBox.Size = new System.Drawing.Size(32, 23);
+            this.pos_L_increase_textBox.Size = new System.Drawing.Size(53, 23);
             this.pos_L_increase_textBox.TabIndex = 101;
             // 
             // right_pos_send
             // 
             this.right_pos_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.right_pos_send.Location = new System.Drawing.Point(695, 199);
+            this.right_pos_send.Location = new System.Drawing.Point(716, 199);
             this.right_pos_send.Margin = new System.Windows.Forms.Padding(4);
             this.right_pos_send.Name = "right_pos_send";
             this.right_pos_send.Size = new System.Drawing.Size(45, 23);
@@ -961,7 +968,7 @@ namespace PID_Config
             // left_pos_send
             // 
             this.left_pos_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.left_pos_send.Location = new System.Drawing.Point(695, 169);
+            this.left_pos_send.Location = new System.Drawing.Point(716, 169);
             this.left_pos_send.Margin = new System.Windows.Forms.Padding(4);
             this.left_pos_send.Name = "left_pos_send";
             this.left_pos_send.Size = new System.Drawing.Size(45, 23);
@@ -1022,7 +1029,7 @@ namespace PID_Config
             // 
             this.right_mot_send_checkbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.right_mot_send_checkbox.AutoSize = true;
-            this.right_mot_send_checkbox.Location = new System.Drawing.Point(673, 264);
+            this.right_mot_send_checkbox.Location = new System.Drawing.Point(694, 264);
             this.right_mot_send_checkbox.Name = "right_mot_send_checkbox";
             this.right_mot_send_checkbox.Size = new System.Drawing.Size(15, 14);
             this.right_mot_send_checkbox.TabIndex = 106;
@@ -1032,7 +1039,7 @@ namespace PID_Config
             // 
             this.left_mot_send_checkbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.left_mot_send_checkbox.AutoSize = true;
-            this.left_mot_send_checkbox.Location = new System.Drawing.Point(673, 234);
+            this.left_mot_send_checkbox.Location = new System.Drawing.Point(694, 234);
             this.left_mot_send_checkbox.Name = "left_mot_send_checkbox";
             this.left_mot_send_checkbox.Size = new System.Drawing.Size(15, 14);
             this.left_mot_send_checkbox.TabIndex = 105;
@@ -1042,7 +1049,7 @@ namespace PID_Config
             // 
             this.right_pos_send_checkbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.right_pos_send_checkbox.AutoSize = true;
-            this.right_pos_send_checkbox.Location = new System.Drawing.Point(673, 204);
+            this.right_pos_send_checkbox.Location = new System.Drawing.Point(694, 204);
             this.right_pos_send_checkbox.Name = "right_pos_send_checkbox";
             this.right_pos_send_checkbox.Size = new System.Drawing.Size(15, 14);
             this.right_pos_send_checkbox.TabIndex = 104;
@@ -1052,17 +1059,100 @@ namespace PID_Config
             // 
             this.left_pos_send_checkbox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.left_pos_send_checkbox.AutoSize = true;
-            this.left_pos_send_checkbox.Location = new System.Drawing.Point(673, 174);
+            this.left_pos_send_checkbox.Location = new System.Drawing.Point(694, 174);
             this.left_pos_send_checkbox.Name = "left_pos_send_checkbox";
             this.left_pos_send_checkbox.Size = new System.Drawing.Size(15, 14);
             this.left_pos_send_checkbox.TabIndex = 103;
             this.left_pos_send_checkbox.UseVisualStyleBackColor = true;
             // 
+            // compc_text_box
+            // 
+            this.compc_text_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.compc_text_box.Location = new System.Drawing.Point(495, 288);
+            this.compc_text_box.Name = "compc_text_box";
+            this.compc_text_box.Size = new System.Drawing.Size(63, 23);
+            this.compc_text_box.TabIndex = 107;
+            this.compc_text_box.TextChanged += new System.EventHandler(this.compc_text_box_TextChanged);
+            // 
+            // compc_plus
+            // 
+            this.compc_plus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.compc_plus.Location = new System.Drawing.Point(566, 288);
+            this.compc_plus.Margin = new System.Windows.Forms.Padding(4);
+            this.compc_plus.Name = "compc_plus";
+            this.compc_plus.Size = new System.Drawing.Size(27, 23);
+            this.compc_plus.TabIndex = 108;
+            this.compc_plus.Text = "+";
+            this.compc_plus.UseVisualStyleBackColor = true;
+            this.compc_plus.Click += new System.EventHandler(this.compc_plus_Click);
+            // 
+            // compc_minus
+            // 
+            this.compc_minus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.compc_minus.Location = new System.Drawing.Point(601, 288);
+            this.compc_minus.Margin = new System.Windows.Forms.Padding(4);
+            this.compc_minus.Name = "compc_minus";
+            this.compc_minus.Size = new System.Drawing.Size(25, 23);
+            this.compc_minus.TabIndex = 109;
+            this.compc_minus.Text = "-";
+            this.compc_minus.UseVisualStyleBackColor = true;
+            this.compc_minus.Click += new System.EventHandler(this.compc_minus_Click);
+            // 
+            // compc_increase_textBox
+            // 
+            this.compc_increase_textBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.compc_increase_textBox.Location = new System.Drawing.Point(634, 288);
+            this.compc_increase_textBox.Margin = new System.Windows.Forms.Padding(4);
+            this.compc_increase_textBox.Name = "compc_increase_textBox";
+            this.compc_increase_textBox.Size = new System.Drawing.Size(53, 23);
+            this.compc_increase_textBox.TabIndex = 110;
+            // 
+            // compc_checkBox
+            // 
+            this.compc_checkBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.compc_checkBox.AutoSize = true;
+            this.compc_checkBox.Location = new System.Drawing.Point(694, 293);
+            this.compc_checkBox.Name = "compc_checkBox";
+            this.compc_checkBox.Size = new System.Drawing.Size(15, 14);
+            this.compc_checkBox.TabIndex = 111;
+            this.compc_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // compc_send
+            // 
+            this.compc_send.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.compc_send.Location = new System.Drawing.Point(716, 288);
+            this.compc_send.Margin = new System.Windows.Forms.Padding(4);
+            this.compc_send.Name = "compc_send";
+            this.compc_send.Size = new System.Drawing.Size(45, 23);
+            this.compc_send.TabIndex = 112;
+            this.compc_send.Text = "SET";
+            this.compc_send.UseVisualStyleBackColor = true;
+            this.compc_send.Click += new System.EventHandler(this.compc_send_Click);
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(420, 291);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 17);
+            this.label15.TabIndex = 113;
+            this.label15.Text = "COMP C";
+            // 
             // PID_config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 525);
+            this.ClientSize = new System.Drawing.Size(1043, 524);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.compc_send);
+            this.Controls.Add(this.compc_checkBox);
+            this.Controls.Add(this.compc_increase_textBox);
+            this.Controls.Add(this.compc_minus);
+            this.Controls.Add(this.compc_plus);
+            this.Controls.Add(this.compc_text_box);
             this.Controls.Add(this.right_mot_send_checkbox);
             this.Controls.Add(this.left_mot_send_checkbox);
             this.Controls.Add(this.right_pos_send_checkbox);
@@ -1256,6 +1346,13 @@ namespace PID_Config
         private System.Windows.Forms.CheckBox left_mot_send_checkbox;
         private System.Windows.Forms.CheckBox right_pos_send_checkbox;
         private System.Windows.Forms.CheckBox left_pos_send_checkbox;
+        private System.Windows.Forms.TextBox compc_text_box;
+        private System.Windows.Forms.Button compc_plus;
+        private System.Windows.Forms.Button compc_minus;
+        private System.Windows.Forms.TextBox compc_increase_textBox;
+        private System.Windows.Forms.CheckBox compc_checkBox;
+        private System.Windows.Forms.Button compc_send;
+        private System.Windows.Forms.Label label15;
         
     }
 }
