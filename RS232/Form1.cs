@@ -1014,10 +1014,30 @@ namespace PID_Config
 
         private void left_pos_plus_Click(object sender, EventArgs e)
         {
+            try { leftPosition += Convert.ToInt32(pos_L_increase_textBox.Text); }
+            catch { }
+            SetLeftPosText(leftPosition.ToString());
+            if (left_pos_send_checkbox.Checked)
+            {
+                String output = "POS;" + leftPosition.ToString() + ";" + leftPosition.ToString() + "\r";
+                if (port.IsOpen == true)
+                    port.WriteLine(output);
+                SetOutputText(output);
+            }
 
         }
         private void left_pos_minus_Click(object sender, EventArgs e)
         {
+            try { leftPosition -= Convert.ToInt32(pos_L_increase_textBox.Text); }
+            catch { }
+            SetLeftPosText(leftPosition.ToString());
+            if (left_pos_send_checkbox.Checked)
+            {
+                String output = "POS;" + leftPosition.ToString() + ";" + leftPosition.ToString() + "\r";
+                if (port.IsOpen == true)
+                    port.WriteLine(output);
+                SetOutputText(output);
+            }
 
         }
         private void right_pos_plus_Click(object sender, EventArgs e)
